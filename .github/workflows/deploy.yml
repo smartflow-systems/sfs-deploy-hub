@@ -1,0 +1,13 @@
+name: Deploy sfs-deploy-hub
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    uses: smartflow-systems/SmartFlowSite/.github/workflows/sfs-ci-deploy.yml@main
+    secrets:
+      SFS_PAT: \${{ secrets.SFS_PAT }}
+      REPLIT_TOKEN: \${{ secrets.REPLIT_TOKEN }}
