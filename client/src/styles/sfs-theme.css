@@ -1,0 +1,425 @@
+/* ============================================
+   SFS THEME - SmartFlow Systems Brand Colors
+   ============================================ */
+
+:root {
+  /* Brand Colors */
+  --sfs-black: #0D0D0D;
+  --sfs-brown: #3B2F2F;
+  --sfs-brown-light: #5C4A4A;
+  --sfs-brown-dark: #2A2020;
+  --sfs-gold: #FFD700;
+  --sfs-gold-hover: #E6C200;
+  --sfs-gold-dark: #CCB000;
+  --sfs-beige: #F5F5DC;
+  --sfs-white: #FFFFFF;
+
+  /* Gradients */
+  --sfs-gradient-primary: linear-gradient(135deg, var(--sfs-brown) 0%, var(--sfs-black) 100%);
+  --sfs-gradient-gold: linear-gradient(135deg, var(--sfs-gold) 0%, var(--sfs-gold-dark) 100%);
+  --sfs-gradient-overlay: linear-gradient(180deg, rgba(13, 13, 13, 0.95) 0%, rgba(59, 47, 47, 0.85) 100%);
+
+  /* Shadows */
+  --sfs-shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.3);
+  --sfs-shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+  --sfs-shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.5);
+  --sfs-shadow-gold: 0 0 20px rgba(255, 215, 0, 0.3);
+
+  /* Spacing */
+  --sfs-spacing-xs: 0.25rem;
+  --sfs-spacing-sm: 0.5rem;
+  --sfs-spacing-md: 1rem;
+  --sfs-spacing-lg: 2rem;
+  --sfs-spacing-xl: 4rem;
+
+  /* Border Radius */
+  --sfs-radius-sm: 4px;
+  --sfs-radius-md: 8px;
+  --sfs-radius-lg: 16px;
+  --sfs-radius-xl: 24px;
+
+  /* Typography */
+  --sfs-font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --sfs-font-mono: "SF Mono", Monaco, "Cascadia Code", "Roboto Mono", Consolas, "Courier New", monospace;
+}
+
+/* ============================================
+   RESET & BASE STYLES
+   ============================================ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--sfs-font-sans);
+  background: var(--sfs-black);
+  color: var(--sfs-beige);
+  line-height: 1.6;
+  overflow-x: hidden;
+  position: relative;
+  min-height: 100vh;
+}
+
+/* ============================================
+   TYPOGRAPHY
+   ============================================ */
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: var(--sfs-spacing-md);
+  color: var(--sfs-gold);
+}
+
+h1 {
+  font-size: 3rem;
+  background: var(--sfs-gradient-gold);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+h2 {
+  font-size: 2.5rem;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+p {
+  margin-bottom: var(--sfs-spacing-md);
+  color: var(--sfs-beige);
+}
+
+a {
+  color: var(--sfs-gold);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  color: var(--sfs-gold-hover);
+  text-shadow: var(--sfs-shadow-gold);
+}
+
+code {
+  font-family: var(--sfs-font-mono);
+  background: rgba(255, 215, 0, 0.1);
+  padding: 0.2em 0.4em;
+  border-radius: var(--sfs-radius-sm);
+  color: var(--sfs-gold);
+}
+
+/* ============================================
+   BUTTONS
+   ============================================ */
+
+.sfs-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sfs-spacing-sm);
+  padding: var(--sfs-spacing-sm) var(--sfs-spacing-lg);
+  border: none;
+  border-radius: var(--sfs-radius-md);
+  font-family: var(--sfs-font-sans);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.sfs-btn-primary {
+  background: var(--sfs-gradient-gold);
+  color: var(--sfs-black);
+  box-shadow: var(--sfs-shadow-md);
+}
+
+.sfs-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--sfs-shadow-lg), var(--sfs-shadow-gold);
+}
+
+.sfs-btn-secondary {
+  background: transparent;
+  color: var(--sfs-gold);
+  border: 2px solid var(--sfs-gold);
+}
+
+.sfs-btn-secondary:hover {
+  background: var(--sfs-gold);
+  color: var(--sfs-black);
+  transform: translateY(-2px);
+}
+
+.sfs-btn-ghost {
+  background: rgba(255, 215, 0, 0.1);
+  color: var(--sfs-gold);
+  border: 1px solid rgba(255, 215, 0, 0.3);
+}
+
+.sfs-btn-ghost:hover {
+  background: rgba(255, 215, 0, 0.2);
+  border-color: var(--sfs-gold);
+}
+
+/* ============================================
+   INPUTS & FORMS
+   ============================================ */
+
+.sfs-input {
+  width: 100%;
+  padding: var(--sfs-spacing-sm) var(--sfs-spacing-md);
+  background: rgba(59, 47, 47, 0.3);
+  border: 1px solid rgba(255, 215, 0, 0.2);
+  border-radius: var(--sfs-radius-md);
+  color: var(--sfs-beige);
+  font-family: var(--sfs-font-sans);
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.sfs-input:focus {
+  outline: none;
+  border-color: var(--sfs-gold);
+  box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.1);
+  background: rgba(59, 47, 47, 0.5);
+}
+
+.sfs-input::placeholder {
+  color: rgba(245, 245, 220, 0.5);
+}
+
+.sfs-select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23FFD700' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  padding-right: 3rem;
+}
+
+.sfs-textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.sfs-label {
+  display: block;
+  margin-bottom: var(--sfs-spacing-xs);
+  color: var(--sfs-gold);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  letter-spacing: 0.5px;
+}
+
+/* ============================================
+   LAYOUT UTILITIES
+   ============================================ */
+
+.sfs-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 var(--sfs-spacing-lg);
+}
+
+.sfs-section {
+  padding: var(--sfs-spacing-xl) 0;
+  position: relative;
+}
+
+.sfs-grid {
+  display: grid;
+  gap: var(--sfs-spacing-lg);
+}
+
+.sfs-grid-2 {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.sfs-grid-3 {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.sfs-grid-4 {
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.sfs-flex {
+  display: flex;
+  gap: var(--sfs-spacing-md);
+}
+
+.sfs-flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sfs-flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ============================================
+   CARDS
+   ============================================ */
+
+.sfs-card {
+  background: rgba(59, 47, 47, 0.4);
+  border: 1px solid rgba(255, 215, 0, 0.2);
+  border-radius: var(--sfs-radius-lg);
+  padding: var(--sfs-spacing-lg);
+  transition: all 0.3s ease;
+  box-shadow: var(--sfs-shadow-md);
+}
+
+.sfs-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--sfs-gold);
+  box-shadow: var(--sfs-shadow-lg), var(--sfs-shadow-gold);
+}
+
+.sfs-card-header {
+  margin-bottom: var(--sfs-spacing-md);
+  padding-bottom: var(--sfs-spacing-md);
+  border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+}
+
+.sfs-card-title {
+  color: var(--sfs-gold);
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.sfs-card-body {
+  color: var(--sfs-beige);
+}
+
+/* ============================================
+   BADGES & CHIPS
+   ============================================ */
+
+.sfs-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--sfs-radius-xl);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.sfs-badge-success {
+  background: rgba(76, 175, 80, 0.2);
+  color: #4CAF50;
+  border: 1px solid rgba(76, 175, 80, 0.3);
+}
+
+.sfs-badge-warning {
+  background: rgba(255, 215, 0, 0.2);
+  color: var(--sfs-gold);
+  border: 1px solid rgba(255, 215, 0, 0.3);
+}
+
+.sfs-badge-error {
+  background: rgba(244, 67, 54, 0.2);
+  color: #F44336;
+  border: 1px solid rgba(244, 67, 54, 0.3);
+}
+
+.sfs-badge-info {
+  background: rgba(33, 150, 243, 0.2);
+  color: #2196F3;
+  border: 1px solid rgba(33, 150, 243, 0.3);
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+
+@keyframes sfs-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes sfs-pulse-gold {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 0 20px rgba(255, 215, 0, 0);
+  }
+}
+
+.sfs-fade-in {
+  animation: sfs-fade-in 0.6s ease-out forwards;
+}
+
+.sfs-pulse {
+  animation: sfs-pulse-gold 2s infinite;
+}
+
+/* ============================================
+   RESPONSIVE UTILITIES
+   ============================================ */
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
+
+  .sfs-grid-2,
+  .sfs-grid-3,
+  .sfs-grid-4 {
+    grid-template-columns: 1fr;
+  }
+
+  .sfs-container {
+    padding: 0 var(--sfs-spacing-md);
+  }
+}
+
+/* ============================================
+   SCROLLBAR STYLING
+   ============================================ */
+
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--sfs-black);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--sfs-brown);
+  border-radius: var(--sfs-radius-md);
+  border: 2px solid var(--sfs-black);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--sfs-brown-light);
+}
